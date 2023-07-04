@@ -1,0 +1,59 @@
+$primary-color: #811f5d;
+$secondary-color: #fff;
+$first-size: 1.5rem;
+$second-size: 1.2rem;
+$third-size: 1rem;
+
+.nav{
+
+    padding: $first-size;
+    .wrapper{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 30px;
+  
+    
+    .nav__left{
+        display: flex;
+        align-items: center;
+        gap: $first-size;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .nav__middle{
+        align-items: center;
+        font-size: calc($first-size *1.5);
+        }
+    .nav__right{
+        display: flex;
+        align-items: center;
+        gap: $first-size; ;
+       }
+       .icons{
+        display: flex;
+        gap: $third-size;
+        color: #666;
+        font-size: $second-size;
+        &:hover{
+           cursor: pointer;
+            color: $primary-color;
+        }
+        .cartIcon{
+            position: relative;
+            .cartCount{
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background-color: $primary-color;
+                color: $secondary-color;
+                border-radius: 50%;
+                padding: 0 5px;
+                font-size: $third-size;
+            }
+        }
+       }
+    
+}
+}
