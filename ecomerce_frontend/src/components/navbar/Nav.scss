@@ -25,6 +25,10 @@ $third-size: 1rem;
     .nav__middle{
         align-items: center;
         font-size: calc($first-size *1.5);
+        letter-spacing: 5px;
+        a{
+            color: $primary-color;
+        }
         }
     .nav__right{
         display: flex;
