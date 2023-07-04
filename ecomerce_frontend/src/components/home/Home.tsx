@@ -1,9 +1,11 @@
-
+import Slider from "../slider/Slider.tsx";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <Slider />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

@@ -10,7 +10,7 @@ import Product from "../components/product/Product.tsx";
     element: <App/>,
     children:[
       {
-        path: "/home",
+        path: "/",
         element: <Home/>,
       },
       {
