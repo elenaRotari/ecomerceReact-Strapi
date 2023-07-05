@@ -1,0 +1,49 @@
+$primary-color: #811f5d;
+$secondary-color: #fff;
+$first-size: 1.5rem;
+$second-size: 1.2rem;
+$third-size: 1rem;
+.slider {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: relative;
+  .imgs__slider {
+    width: 400vw;
+    display: flex;
+    height: 100%;
+    img {
+      display: none;
+    }
+    .active {
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.8;
+    }
+  }
+  .icons {
+    position: absolute;
+    display: flex;
+    font-size: 2rem;
+    bottom: 5%;
+    left: 50%;
+    cursor: pointer;
+    gap: 0.5rem;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $primary-color;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      background-color: transparent;
+      border: 1px solid $primary-color;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

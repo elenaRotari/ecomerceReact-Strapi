@@ -2,7 +2,7 @@ import Slider from "../slider/Slider.tsx";
 
 function Home() {
   return (
-    <div>
+    <div className="home">
       <Slider />
     </div>
   );
