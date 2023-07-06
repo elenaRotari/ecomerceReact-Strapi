@@ -7,6 +7,7 @@ $third-size: 1rem;
   height: calc(100vh - 80px);
   width: 100vw;
   position: relative;
+
   .imgs__slider {
     height: 100%;
 
@@ -19,6 +20,18 @@ $third-size: 1rem;
       object-fit: cover;
       object-position: 70% 20%;
       display: block;
+      opacity: 0.8;
+
+      animation: slide 1s ease-in-out;
+    }
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.8;
     }
   }
   .icons {
@@ -30,7 +43,7 @@ $third-size: 1rem;
     cursor: pointer;
     gap: 0.5rem;
     background-color: transparent;
-    transition: all 0.3s ease;
+
     &:hover {
       color: $primary-color;
     }
@@ -41,7 +54,8 @@ $third-size: 1rem;
       background-color: transparent;
       border: 1px solid $primary-color;
       color: $secondary-color;
-      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
       align-items: center;
       justify-content: center;
     }
@@ -58,20 +72,24 @@ $third-size: 1rem;
     h2 {
       font-size: calc(#{$second-size} * 4);
       color: $secondary-color;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
       margin-bottom: 1rem;
     }
     button {
       font-size: $third-size;
-      color: $secondary-color;
+
       background-color: $primary-color;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.5rem;
       border-radius: 5px;
       cursor: pointer;
-      transition: all 0.3s ease;
       &:hover {
         background-color: transparent;
         color: $primary-color;
+      }
+      a {
+        text-decoration: none;
+        color: $secondary-color;
       }
     }
   }

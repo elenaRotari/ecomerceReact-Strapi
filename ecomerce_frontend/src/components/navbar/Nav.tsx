@@ -45,7 +45,7 @@ function Nav() {
             <Link to="/">Contact</Link>
           </div>
           <div className="item">
-            <Link to="/">Store</Link>
+            <Link to="/store">Store</Link>
           </div>
           <div className="icons">
             <AiOutlineSearch />

@@ -2,14 +2,11 @@ import "./slider.scss";
 import { api } from "../../lib/api";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 function Slider() {
   const [items, setItems] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(1);
-
-  // console.log(items.data?.attributes.items.data.length - 1);
-
-  // console.log(currentSlide);
 
   useEffect(() => {
     const props = {
@@ -62,7 +59,9 @@ function Slider() {
       <div className="text">
         <h1>Sale</h1>
         <h2>Up to 50% off</h2>
-        <button>Shop Now </button>
+        <button>
+          <Link to="/store">Shop now</Link>
+        </button>
       </div>
     </div>
   );

@@ -1,17 +1,18 @@
-import {createBrowserRouter} from "react-router-dom"
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../components/home/Home.tsx";
 import Category from "../components/catergory/Category.tsx";
 import Product from "../components/product/Product.tsx";
+import Store from "../components/store/Store.tsx";
 
-  const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    children:[
+    element: <App />,
+    children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "/products/:id",
@@ -19,9 +20,13 @@ import Product from "../components/product/Product.tsx";
       },
       {
         path: "/product/:id",
-        element: <Product/>,
+        element: <Product />,
       },
-    ]
+      {
+        path: "/store",
+        element: <Store />,
+      },
+    ],
   },
 ]);
 export default router;
