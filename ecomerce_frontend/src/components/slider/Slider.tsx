@@ -9,7 +9,7 @@ function Slider() {
 
   // console.log(items.data?.attributes.items.data.length - 1);
 
-  console.log(currentSlide);
+  // console.log(currentSlide);
 
   useEffect(() => {
     const props = {
@@ -45,7 +45,7 @@ function Slider() {
             <img
               key={index}
               className={index === currentSlide ? "active" : ""}
-              src={"http://localhost:1337" + el.attributes.formats.large.url}
+              src={"http://localhost:1337" + el.attributes.url}
               alt=""
             />
           );
@@ -58,6 +58,11 @@ function Slider() {
         <div className="icon" onClick={rightHandle}>
           <IoIosArrowForward />
         </div>
+      </div>
+      <div className="text">
+        <h1>Sale</h1>
+        <h2>Up to 50% off</h2>
+        <button>Shop Now </button>
       </div>
     </div>
   );
