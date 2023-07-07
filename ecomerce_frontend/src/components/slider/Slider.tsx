@@ -1,33 +1,22 @@
 import "./slider.scss";
-import { api } from "../../lib/api";
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-function Slider() {
-  const [items, setItems] = useState([]);
+function Slider({ data }: { data: any }) {
   const [currentSlide, setCurrentSlide] = useState(1);
-
-  useEffect(() => {
-    const props = {
-      url: "http://localhost:1337",
-      path: "api/slider?populate=items",
-    };
-    api(props).then((res) => {
-      setItems(res);
-    });
-  }, []);
 
   const leftHandle = () => {
     if (currentSlide === 0) {
-      setCurrentSlide(items.data?.attributes.items.data.length - 1);
+      setCurrentSlide(data.data?.attributes.items.data.length - 1);
     } else {
       setCurrentSlide(currentSlide - 1);
     }
   };
 
   const rightHandle = () => {
-    if (currentSlide === items.data?.attributes.items.data.length - 1) {
+    if (currentSlide === data.data?.attributes.items.data.length - 1) {
       setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide + 1);
@@ -37,7 +26,7 @@ function Slider() {
   return (
     <div className="slider">
       <div className="imgs__slider">
-        {items.data?.attributes.items.data?.map((el: any, index: number) => {
+        {data.data?.attributes.items.data?.map((el: any, index: number) => {
           return (
             <img
               key={index}

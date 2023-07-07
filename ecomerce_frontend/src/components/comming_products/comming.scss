@@ -1,0 +1,29 @@
+$primary-color: #811f5d;
+$secondary-color: #fff;
+$first-size: 1.5rem;
+$second-size: 1.2rem;
+$third-size: 1rem;
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: $first-size calc($first-size * 4);
+  .top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .describe {
+      text-align: justify;
+    }
+  }
+  .bottom {
+    display: flex;
+    gap: 2rem;
+    margin: 3rem;
+  }
+}
