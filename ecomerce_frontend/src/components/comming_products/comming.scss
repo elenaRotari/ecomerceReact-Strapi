@@ -11,19 +11,26 @@ $third-size: 1rem;
   justify-content: center;
   margin: $first-size calc($first-size * 4);
   .top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     h3 {
-      color: #333;
+      color: #444;
       margin-bottom: 1rem;
+      flex: 2;
+      font-size: calc($first-size * 0.7);
     }
     .describe {
       text-align: justify;
+      flex: 3;
+      color: #444;
+      font-size: calc($third-size * 0.8);
     }
   }
   .bottom {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin: 3rem;
   }
 }
