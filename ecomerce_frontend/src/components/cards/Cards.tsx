@@ -1,9 +1,8 @@
+import { upperCaseFirstLetter } from "../../lib/utilitis";
 import "./cards.scss";
 import { Link } from "react-router-dom";
 
 const Cards = ({ el }: any) => {
-  console.log(el?.attributes?.img.data[0].attributes.url);
-
   return (
     <Link to={`/product/${el?.id}`}>
       <div className="cart_item">
@@ -26,7 +25,14 @@ const Cards = ({ el }: any) => {
           />
         </div>
         <div className="details">
-          <h3 className="title">{el?.attributes?.title}</h3>
+          <h3 className="title">
+            {upperCaseFirstLetter(el?.attributes?.title)}
+          </h3>
+          {el?.attributes.oldPrice && (
+            <p className="old_price">
+              old Price: {el?.attributes.oldPrice} <span>€</span>
+            </p>
+          )}
           <p className="price">
             Price: {el?.attributes.price} <span>€</span>
           </p>

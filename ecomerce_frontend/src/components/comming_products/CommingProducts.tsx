@@ -1,7 +1,12 @@
 import "./comming.scss";
 import Cards from "../cards/Cards";
+import { firstFive } from "../../lib/utilitis";
 
-const CommingProducts = ({ type, data: products }) => {
+const CommingProducts = ({ data: products }) => {
+  const firstFiveProducts = firstFive(
+    products?.data.filter((el: any) => el.attributes.isNew)
+  );
+
   return (
     <div className="feature">
       <div className="top">
@@ -16,9 +21,9 @@ const CommingProducts = ({ type, data: products }) => {
         </p>
       </div>
       <div className="bottom">
-        {products?.data.map((el: any, index: number) => {
-          return <Cards el={el} />;
-        })}
+        {firstFiveProducts?.map((el: any) => (
+          <Cards el={el} key={el.id} />
+        ))}
       </div>
     </div>
   );

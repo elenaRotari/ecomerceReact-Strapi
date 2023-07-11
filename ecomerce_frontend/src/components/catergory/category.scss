@@ -1,0 +1,36 @@
+.categories {
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 16px;
+  width: 80%;
+  margin: 0 auto;
+
+  .span {
+    grid-column: span 2;
+    object-fit: cover;
+    object-position: center;
+  }
+  .category {
+    position: relative;
+  }
+
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+  }
+
+  .category_name {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    color: white;
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+  }
+}

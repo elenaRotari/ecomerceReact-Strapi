@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-import Cards from "../cards/Cards.tsx";
+
 import CommingProducts from "../comming_products/CommingProducts.tsx";
 import Slider from "../slider/Slider.tsx";
 import { api } from "../../lib/api.ts";
+import Category from "../catergory/Category.tsx";
 
 type Items = {
   title: string;
@@ -14,9 +15,14 @@ type Items = {
 type Data = {
   data: any;
 };
+type Categorys = {
+  name: string;
+  avatar: string;
+};
 type LoaderProps = {
   data: Data[];
   items: Items[];
+  categoriesData: Categorys[];
 };
 function Home() {
   const data = useLoaderData() as LoaderProps;
@@ -25,7 +31,8 @@ function Home() {
     <div className="home">
       <Slider data={data.data} />
       <CommingProducts type="comming" data={data.items} />
-      <CommingProducts type="trending" />
+      <Category categoriesData={data.categoriesData} />
+      <CommingProducts type="trending" data={data.items} />
     </div>
   );
 }
@@ -46,5 +53,12 @@ export const loader = async () => {
     path: "api/items?populate=img",
   };
   const items = await api(propsItems);
-  return { data, items };
+  // categorysData
+  const categorys = {
+    url: "http://localhost:1337",
+    path: "api/categories?populate=avatar",
+  };
+  const categoriesData = await api(categorys);
+
+  return { data, items, categoriesData };
 };
